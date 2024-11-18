@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Tracks</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Download Separated Tracks</h1>
+        <ul>
+            <li><a href="{{ links.original_mp3 }}">Download Original MP3</a></li>
+            <li><a href="{{ links.vocals }}">Download Vocals</a></li>
+            <li><a href="{{ links.bass }}">Download Bass</a></li>
+            <li><a href="{{ links.drums }}">Download Drums</a></li>
+            <li><a href="{{ links.piano }}">Download Piano</a></li>
+            <li><a href="{{ links.other }}">Download Other</a></li>
+        </ul>
+        <a class="back-link" href="/">Process Another Track</a>
+    </div>
+</body>
+</html>

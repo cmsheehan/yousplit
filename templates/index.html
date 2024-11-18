@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Splitter</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        /* Additional styles for the loader */
+        .loader {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f4f4f9;
+            border-top: 4px solid #007BFF;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Splitter</h1>
+        <form id="split-form" action="/process" method="POST">
+            <label for="url">Enter YouTube URL:</label>
+            <input type="text" id="url" name="url" placeholder="Paste YouTube link here..." required>
+            <button type="submit">Split Audio</button>
+        </form>
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <p>Processing... Please wait.</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('split-form');
+        const loader = document.getElementById('loader');
+
+        form.addEventListener('submit', () => {
+            loader.style.display = 'block'; // Show loader when form is submitted
+        });
+    </script>
+</body>
+</html>
